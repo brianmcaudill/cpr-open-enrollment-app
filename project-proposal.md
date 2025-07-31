@@ -477,7 +477,12 @@ All AI features as specified in the RFI are fully integrated into the architectu
 ## UX/UI Design Approach
 
 ### Design Methodology
-As specified in the RFI, we will coordinate closely with your internal Creative and Design teams for all branded elements and art direction. Our technical implementation approach ensures seamless integration with your design vision.
+Our UX/UI approach combines industry best practices with CPR training-specific user research to create intuitive, conversion-optimized experiences. While collaborating with your internal Creative team on brand elements, we bring substantial expertise in:
+
+- **User Journey Mapping** - Optimizing paths from discovery to certification
+- **Conversion Rate Optimization** - Data-driven design decisions that increase enrollment
+- **Accessibility-First Design** - Beyond compliance to truly inclusive experiences
+- **Performance Design** - Sub-3 second load times through progressive enhancement
 
 ### Reference Examples
 Based on the provided mockups:
@@ -518,23 +523,91 @@ Based on the provided mockups:
      - Bottom navigation pattern
      - Compact course cards for mobile screens
 
-### Technical Design Implementation
-Our approach focuses on:
+### Our UX Design Expertise
 
-- **Component Architecture** - Reusable components matching your existing design patterns
-- **Design System Integration** - Flexible theming to support your brand guidelines
-- **Accessibility Standards** - WCAG 2.1 AA compliance built into all components
-- **Responsive Framework** - Mobile-first approach matching your current interfaces
-- **Performance Optimization** - Fast-loading interfaces with skeleton screens and progressive enhancement
+#### Training Platform Specialization
+We've identified key UX patterns specific to successful training platforms:
 
-### Design Collaboration Process
-1. Review and analyze all provided mockups and design assets
-2. Create technical component specifications based on designs
-3. Implement pixel-perfect components with your design team's guidance
-4. Maintain design-development sync through regular reviews
-5. Provide technical documentation for design handoffs
+1. **Reduced Decision Fatigue**
+   - Smart defaults based on location and past behavior
+   - Progressive disclosure of complex options
+   - Guided selection flows for course types
 
-This approach ensures your design vision is fully realized while maintaining technical excellence and scalability.
+2. **Trust Signals Integration**
+   - Instructor credentials prominently displayed
+   - Real-time seat availability
+   - Clear refund policies at point of decision
+   - Social proof through ratings and testimonials
+
+3. **Mobile-Specific Optimizations**
+   - One-thumb navigation zones
+   - Offline capability for skills checklists
+   - Camera integration for document uploads
+   - Touch-optimized date/time selectors
+
+4. **Conversion Optimization**
+   - Persistent cart across devices
+   - Guest checkout with account creation post-purchase
+   - Multiple payment methods visible upfront
+   - Urgency indicators for filling classes
+
+### Design System Architecture
+
+We'll implement a comprehensive design system that:
+
+- **Atomic Design Principles** - Building from atoms to templates
+- **Token-Based Theming** - Enabling white-label flexibility
+- **Component Documentation** - Storybook for design handoff
+- **A/B Testing Framework** - Built-in experimentation capabilities
+- **Analytics Integration** - Heatmaps, session recording, funnel analysis
+
+### Competitive UX Advantages
+
+Based on analysis of existing CPR platforms, our UX will excel through:
+
+1. **Intelligent Filtering** - Unlike competitors' basic search, we implement:
+   - Natural language processing ("CPR class this weekend near me")
+   - Smart radius expansion when results are limited
+   - Saved searches and alerts
+
+2. **Frictionless Enrollment**
+   - Social login options
+   - Apple Pay/Google Pay integration
+   - Group registration workflows
+   - Corporate account management
+
+3. **Post-Enrollment Excellence**
+   - Native calendar integration (not just ICS files)
+   - Smart reminder cadence
+   - Pre-class requirement checklists
+   - Digital wallet passes for certificates
+
+### Design Process & Deliverables
+
+1. **Discovery Phase**
+   - Stakeholder interviews
+   - Competitor analysis deep-dive
+   - User persona development
+   - Journey mapping workshops
+
+2. **Design Phase**
+   - Information architecture
+   - Wireframe iterations
+   - Interactive prototypes
+   - Usability testing
+
+3. **Implementation Phase**
+   - Design system creation
+   - Component library development
+   - Design QA process
+   - Performance optimization
+
+4. **Optimization Phase**
+   - A/B testing program
+   - Conversion funnel analysis
+   - Continuous improvement cycle
+
+This comprehensive UX/UI approach ensures we deliver not just a functional platform, but an industry-leading user experience that drives enrollment and satisfaction.
 
 ## Conclusion
 
