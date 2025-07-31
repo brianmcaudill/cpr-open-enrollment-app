@@ -55,13 +55,43 @@ body {
 
 /* Mobile padding to account for fixed navbar */
 @media (max-width: 768px) {
-    .page {
-        padding-top: 64px;
+    /* Remove padding from body as it causes issues */
+    body {
+        padding-top: 0 !important;
     }
     
+    /* Add padding to all main content areas */
+    .main-content,
+    .course-detail-content,
+    .checkout-content,
+    .dashboard-content,
+    .login-container,
+    .legal-content,
+    .help-content,
+    .admin-content,
+    .instructor-content,
+    .docs-content,
+    .embed-container {
+        padding-top: 80px !important; /* Extra padding for safety */
+    }
+    
+    /* Special handling for login page */
+    #login-page {
+        padding-top: 0;
+    }
+    
+    #login-page .login-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+    }
+    
+    /* Hero sections that go full width */
     .hero {
-        margin-top: -64px;
-        padding-top: calc(3rem + 64px);
+        margin-top: 0;
+        padding-top: calc(3rem + 80px);
     }
 }
 
@@ -1618,10 +1648,7 @@ select:focus {
         z-index: 1000;
     }
     
-    /* Add padding to body to prevent content overlap */
-    body {
-        padding-top: 64px;
-    }
+    /* Body padding handled in main mobile section above */
     
     .nav-container {
         flex-wrap: nowrap;
