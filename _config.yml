@@ -1,0 +1,16 @@
+# GitHub Pages Configuration
+theme: minima
+title: CPR Open Enrollment Platform
+description: Next-generation CPR training management system
+baseurl: "/cpr-open-enrollment-app"
+url: "https://brianmcaudill.github.io"
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from build
+exclude:
+  - README.md
+  - DEPLOYMENT.md
+  - project-proposal.md
+  - .gitignore
