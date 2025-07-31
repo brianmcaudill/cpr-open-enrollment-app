@@ -496,7 +496,27 @@ Based on the provided mockups:
    - Multi-tenant support (Training Business selector)
    - Responsive table layouts
 
-3. **Additional UX Pilot Designs** - To be incorporated from uxpilot.ai mockups
+3. **UX Pilot Mockups** - Demonstrate modern e-commerce patterns:
+   - **Course Discovery** (uxpilot-design-1753964336586.png, uxpilot-design-1753964394497.png)
+     - Clean calendar-based navigation
+     - Advanced filtering sidebar (course type, distance, price range)
+     - Card-based course listings with visual hierarchy
+     - Location-aware search ("San Francisco, CA")
+     - Premium course badges and pricing display
+   
+   - **Payment Flow** (uxpilot-design-1753964354797.png)
+     - Split-screen checkout design
+     - Clear order summary with course details
+     - Multiple payment options (PayPal, card)
+     - Attendee management capabilities
+     - Secure payment processing with Stripe
+   
+   - **Mobile Experience** (uxpilot-design-1753964416971.png)
+     - Mobile-first course discovery
+     - Simplified calendar navigation
+     - Touch-optimized enrollment buttons
+     - Bottom navigation pattern
+     - Compact course cards for mobile screens
 
 ### Technical Design Implementation
 Our approach focuses on:
