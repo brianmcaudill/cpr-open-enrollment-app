@@ -2,6 +2,13 @@
 
 ## [Unreleased] - 2025-07-31
 
+### Fixed
+- Mobile header overlap issue - navbar now uses position:fixed on mobile
+- Header squishing on small screens - prevented navbar wrapping
+- Content hiding under header - added proper padding-top to pages
+- Mobile menu dropdown positioning - fixed below navbar with proper z-index
+- Small screen optimization - reduced sizes for 480px and below
+
 ### Added
 - Comprehensive mobile-first responsive design across entire application
 - Mobile navigation menu with hamburger toggle
