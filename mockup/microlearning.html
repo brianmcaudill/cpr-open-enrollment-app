@@ -182,7 +182,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-left">
-                <div class="logo-small">🫀 CPR Training Hub</div>
+                <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="material-icons text-danger">favorite</span>
+                    CPR Training Hub
+                </div>
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="#" class="nav-link active">Microlearning</a>
                 <a href="community.html" class="nav-link">Community</a>
@@ -206,27 +209,33 @@
         <h2>Your BLS Learning Path</h2>
         <div class="learning-path">
             <div class="path-item completed">
-                <div class="path-icon">✓</div>
+                <div class="path-icon"><span class="material-icons text-success">check_circle</span></div>
                 <div class="path-title">Pre-Class Prep</div>
                 <div style="color: #10b981; font-size: 0.875rem;">Completed</div>
             </div>
             <div class="path-item completed">
-                <div class="path-icon">✓</div>
+                <div class="path-icon"><span class="material-icons text-success">check_circle</span></div>
                 <div class="path-title">In-Class Training</div>
                 <div style="color: #10b981; font-size: 0.875rem;">Completed</div>
             </div>
             <div class="path-item current">
-                <div class="path-icon">📚</div>
+                <div class="path-icon">
+                    <span class="material-icons md-48 text-info">menu_book</span>
+                </div>
                 <div class="path-title">Post-Class Review</div>
                 <div style="color: #f59e0b; font-size: 0.875rem;">In Progress</div>
             </div>
             <div class="path-item">
-                <div class="path-icon">🎯</div>
+                <div class="path-icon">
+                    <span class="material-icons md-48 text-warning">track_changes</span>
+                </div>
                 <div class="path-title">Skills Mastery</div>
                 <div style="color: #6b7280; font-size: 0.875rem;">Locked</div>
             </div>
             <div class="path-item">
-                <div class="path-icon">🏆</div>
+                <div class="path-icon">
+                    <span class="material-icons md-48" style="color: #fbbf24;">emoji_events</span>
+                </div>
                 <div class="path-title">Certification</div>
                 <div style="color: #6b7280; font-size: 0.875rem;">Locked</div>
             </div>
@@ -244,14 +253,20 @@
     <div class="module-grid">
         <!-- Pre-Class Refresher -->
         <div class="module-card">
-            <div class="module-image">🫁</div>
+            <div class="module-image"><span class="material-icons" style="font-size: 4rem;">air</span></div>
             <div class="module-content">
                 <div class="module-badge">Pre-Class</div>
                 <h3 class="module-title">CPR Basics Refresher</h3>
                 <p class="module-description">Review essential CPR concepts before your class. Covers chest compressions, rescue breathing, and AED use.</p>
                 <div class="module-stats">
-                    <span>⏱️ 15 minutes</span>
-                    <span>📊 10 questions</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        15 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">quiz</span>
+                        10 questions
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 100%"></div>
@@ -262,14 +277,20 @@
 
         <!-- Adult CPR Quiz -->
         <div class="module-card">
-            <div class="module-image">🧑</div>
+            <div class="module-image"><span class="material-icons" style="font-size: 4rem;">person</span></div>
             <div class="module-content">
                 <div class="module-badge">Post-Class</div>
                 <h3 class="module-title">Adult CPR Technique Quiz</h3>
                 <p class="module-description">Test your knowledge of adult CPR procedures including compression depth, rate, and hand placement.</p>
                 <div class="module-stats">
-                    <span>⏱️ 10 minutes</span>
-                    <span>📊 15 questions</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        10 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">quiz</span>
+                        15 questions
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 60%"></div>
@@ -280,14 +301,20 @@
 
         <!-- Child CPR Module -->
         <div class="module-card">
-            <div class="module-image">👶</div>
+            <div class="module-image"><span class="material-icons" style="font-size: 4rem;">child_care</span></div>
             <div class="module-content">
                 <div class="module-badge">Skills Practice</div>
                 <h3 class="module-title">Infant & Child CPR</h3>
                 <p class="module-description">Learn the key differences in CPR technique for infants and children, including modified compression techniques.</p>
                 <div class="module-stats">
-                    <span>⏱️ 20 minutes</span>
-                    <span>📊 Video + Quiz</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        20 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">ondemand_video</span>
+                        Video + Quiz
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 0%"></div>
@@ -298,14 +325,22 @@
 
         <!-- AED Training -->
         <div class="module-card">
-            <div class="module-image">⚡</div>
+            <div class="module-image">
+                <span class="material-icons md-72 text-warning">bolt</span>
+            </div>
             <div class="module-content">
                 <div class="module-badge">Equipment</div>
                 <h3 class="module-title">AED Operation Guide</h3>
                 <p class="module-description">Interactive guide to using an Automated External Defibrillator, including troubleshooting common issues.</p>
                 <div class="module-stats">
-                    <span>⏱️ 12 minutes</span>
-                    <span>📊 Interactive</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        12 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">touch_app</span>
+                        Interactive
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 0%"></div>
@@ -316,14 +351,20 @@
 
         <!-- Choking Relief -->
         <div class="module-card">
-            <div class="module-image">🤚</div>
+            <div class="module-image"><span class="material-icons" style="font-size: 4rem;">pan_tool</span></div>
             <div class="module-content">
                 <div class="module-badge">Emergency Skills</div>
                 <h3 class="module-title">Choking Relief Techniques</h3>
                 <p class="module-description">Master the Heimlich maneuver and back blows for conscious and unconscious choking victims.</p>
                 <div class="module-stats">
-                    <span>⏱️ 15 minutes</span>
-                    <span>📊 Video Demo</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        15 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">play_circle</span>
+                        Video Demo
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 0%"></div>
@@ -334,14 +375,20 @@
 
         <!-- Team CPR -->
         <div class="module-card">
-            <div class="module-image">👥</div>
+            <div class="module-image"><span class="material-icons" style="font-size: 4rem;">groups</span></div>
             <div class="module-content">
                 <div class="module-badge">Advanced</div>
                 <h3 class="module-title">Team-Based Resuscitation</h3>
                 <p class="module-description">Learn effective communication and coordination during multi-rescuer CPR scenarios.</p>
                 <div class="module-stats">
-                    <span>⏱️ 25 minutes</span>
-                    <span>📊 Scenarios</span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">timer</span>
+                        25 minutes
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">psychology</span>
+                        Scenarios
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 0%"></div>
@@ -381,14 +428,17 @@
         </div>
         
         <div style="margin-top: 2rem; padding: 1rem; background: #eff6ff; border-radius: 0.5rem; display: none;">
-            <p style="color: #1e40af; font-weight: 600;">💡 Learning Tip:</p>
+            <p style="color: #1e40af; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                <span class="material-icons text-warning">lightbulb</span>
+                Learning Tip:
+            </p>
             <p style="color: #3730a3;">Remember: For adults, compress at least 2 inches (5 cm) but no more than 2.4 inches (6 cm). This ensures adequate blood flow without causing injury.</p>
         </div>
     </div>
 
     <!-- Achievement Unlocked -->
     <div style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 0.5rem; text-align: center;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🏅</div>
+        <div style="font-size: 3rem; margin-bottom: 1rem;"><span class="material-icons" style="font-size: 3rem; color: #fbbf24;">military_tech</span></div>
         <h3 style="color: #15803d; margin-bottom: 0.5rem;">Achievement Unlocked!</h3>
         <p style="color: #166534;">Quick Learner - Complete 5 microlearning modules</p>
         <button class="btn btn-primary" style="margin-top: 1rem;">View All Achievements</button>

@@ -219,7 +219,10 @@
         <!-- Admin Sidebar -->
         <div class="admin-sidebar">
             <div class="sidebar-header">
-                <h2>🏢 Admin Portal</h2>
+                <h2 style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="material-icons">business</span>
+                    Admin Portal
+                </h2>
                 <div class="org-selector">
                     <div>Bay Area CPR Training</div>
                     <small style="color: #a0aec0;">Switch Organization ▼</small>
@@ -228,38 +231,49 @@
             
             <nav>
                 <a href="#" class="admin-nav-item active" onclick="showAdminSection('overview')">
-                    📊 Overview
+                    <span class="material-icons" style="margin-right: 0.5rem;">dashboard</span>
+                    Overview
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('organizations')">
-                    🏢 Organizations
+                    <span class="material-icons" style="margin-right: 0.5rem;">business</span>
+                    Organizations
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('instructors')">
-                    👥 Instructors
+                    <span class="material-icons" style="margin-right: 0.5rem;">groups</span>
+                    Instructors
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('scheduling')">
-                    📅 Scheduling (TSMS)
+                    <span class="material-icons" style="margin-right: 0.5rem;">event_note</span>
+                    Scheduling (TSMS)
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('billing')">
-                    💰 Billing & Invoices
+                    <span class="material-icons" style="margin-right: 0.5rem;">receipt</span>
+                    Billing & Invoices
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('analytics')">
-                    📈 Analytics
+                    <span class="material-icons" style="margin-right: 0.5rem;">analytics</span>
+                    Analytics
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('compliance')">
-                    ✅ Compliance
+                    <span class="material-icons" style="margin-right: 0.5rem;">verified</span>
+                    Compliance
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('settings')">
-                    ⚙️ Platform Settings
+                    <span class="material-icons" style="margin-right: 0.5rem;">settings</span>
+                    Platform Settings
                 </a>
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('white-label')">
-                    🎨 White Label
+                    <span class="material-icons" style="margin-right: 0.5rem;">palette</span>
+                    White Label
                 </a>
                 <hr style="border-color: #2d3748; margin: 1rem 0;">
                 <a href="#" class="admin-nav-item" onclick="showAdminSection('ai-dashboard')">
-                    🤖 AI Dashboard
+                    <span class="material-icons" style="margin-right: 0.5rem;">smart_toy</span>
+                    AI Dashboard
                 </a>
                 <a href="#" class="admin-nav-item" onclick="navigateTo('discover')">
-                    🔄 Switch to Student View
+                    <span class="material-icons" style="margin-right: 0.5rem;">swap_horiz</span>
+                    Switch to Student View
                 </a>
             </nav>
         </div>
@@ -898,7 +912,7 @@
                                 <label>Logo</label>
                                 <div style="display: flex; align-items: center; gap: 1rem;">
                                     <div style="width: 100px; height: 100px; background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
-                                        <span style="font-size: 2rem;">🏥</span>
+                                        <span class="material-icons" style="font-size: 2rem;">local_hospital</span>
                                     </div>
                                     <div>
                                         <button class="btn btn-secondary">Upload Logo</button>
@@ -968,7 +982,7 @@
                                 <label>SSL Certificate</label>
                                 <div style="padding: 1rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.5rem;">
                                     <div style="display: flex; align-items: center; gap: 0.5rem; color: #15803d;">
-                                        <span>🔒</span>
+                                        <span class="material-icons text-success">lock</span>
                                         <span>SSL automatically provisioned via Let's Encrypt</span>
                                     </div>
                                 </div>
@@ -1005,7 +1019,7 @@
                             <h2>Preview</h2>
                             <div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden;">
                                 <div style="background: #2563eb; color: white; padding: 1rem; text-align: center;">
-                                    <div style="font-size: 1.5rem; font-weight: 600;">🏥 Bay Area CPR Training</div>
+                                    <div style="font-size: 1.5rem; font-weight: 600;"><span class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">local_hospital</span>Bay Area CPR Training</div>
                                 </div>
                                 <div style="padding: 2rem; text-align: center;">
                                     <h3 style="color: #2563eb;">Welcome to Your Training Portal</h3>
@@ -1022,10 +1036,13 @@
                         <div class="organization-card">
                             <h2>Quick Actions</h2>
                             <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <button class="btn btn-secondary">📥 Export Brand Kit</button>
-                                <button class="btn btn-secondary">📤 Import Settings</button>
-                                <button class="btn btn-secondary">🔄 Reset to Default</button>
-                                <button class="btn btn-secondary">📋 Copy Settings to Another Org</button>
+                                <button class="btn btn-secondary"><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">download</span>Export Brand Kit</button>
+                                <button class="btn btn-secondary"><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">upload</span>Import Settings</button>
+                                <button class="btn btn-secondary" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="material-icons md-18">refresh</span>
+                                    Reset to Default
+                                </button>
+                                <button class="btn btn-secondary"><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">content_copy</span>Copy Settings to Another Org</button>
                             </div>
                         </div>
 
@@ -1063,10 +1080,10 @@
     <div id="ai-chatbot" style="position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: none; flex-direction: column;">
         <div style="padding: 1rem; background: #4299e1; color: white; border-radius: 10px 10px 0 0; display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span>🤖</span>
+                <span class="material-icons">smart_toy</span>
                 <span style="font-weight: 600;">CPR Training Assistant</span>
             </div>
-            <button onclick="toggleChatbot()" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+            <button onclick="toggleChatbot()" style="background: none; border: none; color: white; cursor: pointer;"><span class="material-icons" style="font-size: 1rem;">close</span></button>
         </div>
         <div style="flex: 1; padding: 1rem; overflow-y: auto;">
             <div style="margin-bottom: 1rem;">
@@ -1092,7 +1109,7 @@
 
     <!-- Chatbot Toggle Button -->
     <button onclick="toggleChatbot()" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #4299e1; color: white; border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-        💬
+        <span class="material-icons">chat</span>
     </button>
 
     <script src="script.js"></script>

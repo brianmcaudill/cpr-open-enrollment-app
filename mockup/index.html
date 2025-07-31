@@ -12,7 +12,9 @@
         <div class="login-container">
             <div class="login-box">
                 <div class="logo">
-                    <div class="logo-icon">🫀</div>
+                    <div class="logo-icon">
+                        <span class="material-icons md-72 text-danger">favorite</span>
+                    </div>
                     <h1>CPR Training Hub</h1>
                 </div>
                 <form class="login-form">
@@ -20,11 +22,13 @@
                     <p class="subtitle">Sign in to access your training</p>
                     
                     <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                        <button type="button" class="btn btn-secondary" style="flex: 1; font-size: 0.875rem;" onclick="window.location.href='instructor-portal.html'">
-                            👩‍🏫 Instructor Login
+                        <button type="button" class="btn btn-secondary" style="flex: 1; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" onclick="window.location.href='instructor-portal.html'">
+                            <span class="material-icons md-18">school</span>
+                            Instructor Login
                         </button>
-                        <button type="button" class="btn btn-secondary" style="flex: 1; font-size: 0.875rem;" onclick="window.location.href='admin-dashboard.html'">
-                            🏢 Admin Login
+                        <button type="button" class="btn btn-secondary" style="flex: 1; font-size: 0.875rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" onclick="window.location.href='admin-dashboard.html'">
+                            <span class="material-icons md-18">business</span>
+                            Admin Login
                         </button>
                     </div>
                     
@@ -74,17 +78,23 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-left">
-                    <div class="logo-small">🫀 CPR Training Hub</div>
+                    <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-icons text-danger">favorite</span>
+                        CPR Training Hub
+                    </div>
                     <a href="#" onclick="navigateTo('discover')" class="nav-link active">Find Courses</a>
                     <a href="#" onclick="navigateTo('dashboard')" class="nav-link">My Schedule</a>
                     <a href="#" class="nav-link">Saved</a>
                 </div>
                 <div class="nav-right">
-                    <button class="notification-btn">🔔</button>
+                    <button class="notification-btn">
+                        <span class="material-icons">notifications</span>
+                        <span class="notification-badge">3</span>
+                    </button>
                     <div class="user-menu" onclick="toggleUserMenu()">
                         <div class="avatar">JS</div>
                         <span class="user-name">John Smith</span>
-                        <span class="dropdown-arrow">▼</span>
+                        <span class="material-icons md-18" style="color: #6b7280;">arrow_drop_down</span>
                     </div>
                     <div id="user-dropdown" class="user-dropdown">
                         <a href="#" onclick="navigateTo('dashboard')">My Dashboard</a>
@@ -100,7 +110,7 @@
         <div class="main-content">
             <div class="search-header">
                 <div class="location-search">
-                    <span class="location-icon">📍</span>
+                    <span class="material-icons text-primary">location_on</span>
                     <input type="text" value="San Francisco, CA" class="location-input">
                     <span class="location-filter">Within 25 miles</span>
                     <button class="change-btn">Change</button>
@@ -180,9 +190,13 @@
                 <div class="courses-content">
                     <div class="calendar-view">
                         <div class="calendar-header">
-                            <button class="calendar-nav">◄</button>
+                            <button class="calendar-nav">
+                                <span class="material-icons">chevron_left</span>
+                            </button>
                             <h2>March 2025</h2>
-                            <button class="calendar-nav">►</button>
+                            <button class="calendar-nav">
+                                <span class="material-icons">chevron_right</span>
+                            </button>
                         </div>
                         <div class="calendar-grid">
                             <div class="calendar-day-header">Sun</div>
@@ -222,13 +236,25 @@
                                 <h4>BLS Provider Course</h4>
                                 <p class="course-description">American Heart Association BLS Provider certification for healthcare professionals</p>
                                 <div class="course-details">
-                                    <span>📅 Mar 8, 2025 • 9:00 AM - 1:00 PM</span>
-                                    <span>📍 UCSF Medical Center • 0.8 miles away</span>
-                                    <span>👥 Dr. Sarah Johnson, RN</span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-info">event</span>
+                                        Mar 8, 2025 • 9:00 AM - 1:00 PM
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-primary">location_on</span>
+                                        UCSF Medical Center • 0.8 miles away
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-success">person</span>
+                                        Dr. Sarah Johnson, RN
+                                    </span>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-stats">
-                                        <span class="rating">⭐ 4.9 (127 reviews)</span>
+                                        <span class="rating" style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                            4.9 (127 reviews)
+                                        </span>
                                         <span class="seats">5 seats left</span>
                                     </div>
                                     <div class="course-price">
@@ -247,13 +273,25 @@
                                 <h4>Heartsaver First Aid CPR AED</h4>
                                 <p class="course-description">Complete first aid and CPR training for workplace and community responders</p>
                                 <div class="course-details">
-                                    <span>📅 Mar 8, 2025 • 2:00 PM - 6:00 PM</span>
-                                    <span>📍 SF Fire Department • 2.1 miles away</span>
-                                    <span>👥 Mike Chen, EMT-P</span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-info">event</span>
+                                        Mar 8, 2025 • 2:00 PM - 6:00 PM
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-primary">location_on</span>
+                                        SF Fire Department • 2.1 miles away
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-success">person</span>
+                                        Mike Chen, EMT-P
+                                    </span>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-stats">
-                                        <span class="rating">⭐ 4.8 (89 reviews)</span>
+                                        <span class="rating" style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                            4.8 (89 reviews)
+                                        </span>
                                         <span class="seats">12 seats left</span>
                                     </div>
                                     <div class="course-price">
@@ -273,13 +311,25 @@
                                 <h4>ACLS Initial Certification</h4>
                                 <p class="course-description">Advanced Cardiovascular Life Support for healthcare providers</p>
                                 <div class="course-details">
-                                    <span>📅 Mar 8-9, 2025 • 8:00 AM - 5:00 PM</span>
-                                    <span>📍 California Pacific Med Center • 3.5 miles away</span>
-                                    <span>👥 Dr. Robert Williams, MD</span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-info">event</span>
+                                        Mar 8-9, 2025 • 8:00 AM - 5:00 PM
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-primary">location_on</span>
+                                        California Pacific Med Center • 3.5 miles away
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-success">person</span>
+                                        Dr. Robert Williams, MD
+                                    </span>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-stats">
-                                        <span class="rating">⭐ 5.0 (43 reviews)</span>
+                                        <span class="rating" style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                            5.0 (43 reviews)
+                                        </span>
                                         <span class="seats">8 seats left</span>
                                     </div>
                                     <div class="course-price">
@@ -299,13 +349,25 @@
                                 <h4>BLS Renewal Course</h4>
                                 <p class="course-description">BLS Provider renewal for current certification holders</p>
                                 <div class="course-details">
-                                    <span>📅 Mar 8, 2025 • 6:00 PM - 8:00 PM</span>
-                                    <span>📍 St. Mary's Hospital • 1.2 miles away</span>
-                                    <span>👥 Lisa Park, RN</span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-info">event</span>
+                                        Mar 8, 2025 • 6:00 PM - 8:00 PM
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-primary">location_on</span>
+                                        St. Mary's Hospital • 1.2 miles away
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-success">person</span>
+                                        Lisa Park, RN
+                                    </span>
                                 </div>
                                 <div class="course-footer">
                                     <div class="course-stats">
-                                        <span class="rating">⭐ 4.7 (156 reviews)</span>
+                                        <span class="rating" style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                            4.7 (156 reviews)
+                                        </span>
                                         <span class="seats">15 seats left</span>
                                     </div>
                                     <div class="course-price">
@@ -326,13 +388,19 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-left">
-                    <div class="logo-small">🫀 CPR Training Hub</div>
+                    <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-icons text-danger">favorite</span>
+                        CPR Training Hub
+                    </div>
                     <a href="#" onclick="navigateTo('discover')" class="nav-link">Find Courses</a>
                     <a href="#" onclick="navigateTo('dashboard')" class="nav-link">My Schedule</a>
                     <a href="#" class="nav-link">Saved</a>
                 </div>
                 <div class="nav-right">
-                    <button class="notification-btn">🔔</button>
+                    <button class="notification-btn">
+                        <span class="material-icons">notifications</span>
+                        <span class="notification-badge">3</span>
+                    </button>
                     <div class="user-menu">
                         <div class="avatar">JS</div>
                         <span class="user-name">John Smith</span>
@@ -354,9 +422,18 @@
                         <p class="hero-description">American Heart Association BLS Provider certification for healthcare professionals. This comprehensive course covers high-quality CPR for adults, children, and infants.</p>
                         
                         <div class="hero-stats">
-                            <span>⭐ 4.9 (127 reviews)</span>
-                            <span>👥 1,842 students enrolled</span>
-                            <span>🏆 Official AHA Certification</span>
+                            <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                4.9 (127 reviews)
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                <span class="material-icons md-18 text-success">groups</span>
+                                1,842 students enrolled
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                <span class="material-icons md-18" style="color: #fbbf24;">verified</span>
+                                Official AHA Certification
+                            </span>
                         </div>
                     </div>
                     <div class="hero-right">
@@ -366,11 +443,17 @@
                                 <span class="amount">85</span>
                             </div>
                             <div class="course-schedule">
-                                <h3>📅 March 8, 2025</h3>
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="material-icons text-info">event</span>
+                                    March 8, 2025
+                                </h3>
                                 <p>9:00 AM - 1:00 PM PST</p>
                             </div>
                             <div class="course-location">
-                                <h3>📍 UCSF Medical Center</h3>
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="material-icons text-primary">location_on</span>
+                                    UCSF Medical Center
+                                </h3>
                                 <p>505 Parnassus Ave, San Francisco, CA</p>
                                 <a href="#" class="link">Get directions</a>
                             </div>
@@ -384,7 +467,8 @@
                                 Enroll Now
                             </button>
                             <button class="btn btn-secondary">
-                                ❤️ Save for Later
+                                <span class="material-icons" style="margin-right: 0.5rem;">favorite_border</span>
+                                Save for Later
                             </button>
                         </div>
                     </div>
@@ -405,19 +489,19 @@
                         <h2>What You'll Learn</h2>
                         <div class="learning-objectives">
                             <div class="objective">
-                                <span class="check">✓</span>
+                                <span class="material-icons text-success">check_circle</span>
                                 <p>High-quality CPR for adults, children, and infants</p>
                             </div>
                             <div class="objective">
-                                <span class="check">✓</span>
+                                <span class="material-icons text-success">check_circle</span>
                                 <p>Automated external defibrillator (AED) use</p>
                             </div>
                             <div class="objective">
-                                <span class="check">✓</span>
+                                <span class="material-icons text-success">check_circle</span>
                                 <p>Relief of choking for all age groups</p>
                             </div>
                             <div class="objective">
-                                <span class="check">✓</span>
+                                <span class="material-icons text-success">check_circle</span>
                                 <p>Team-based resuscitation and communication</p>
                             </div>
                         </div>
@@ -433,19 +517,19 @@
                         <h2>What's Included</h2>
                         <div class="included-items">
                             <div class="included-item">
-                                <span class="icon">📚</span>
+                                <span class="material-icons md-24 text-info">menu_book</span>
                                 <p>Digital course materials</p>
                             </div>
                             <div class="included-item">
-                                <span class="icon">🏅</span>
+                                <span class="material-icons md-24" style="color: #fbbf24;">workspace_premium</span>
                                 <p>2-year AHA certification</p>
                             </div>
                             <div class="included-item">
-                                <span class="icon">📱</span>
+                                <span class="icon"><span class="material-icons" style="font-size: 1.5rem;">phone_android</span></span>
                                 <p>Digital wallet card</p>
                             </div>
                             <div class="included-item">
-                                <span class="icon">🔄</span>
+                                <span class="icon"><span class="material-icons" style="font-size: 1.5rem;">refresh</span></span>
                                 <p>Free retake if needed</p>
                             </div>
                         </div>
@@ -457,9 +541,18 @@
                                 <h3>Dr. Sarah Johnson, RN, MSN</h3>
                                 <p>AHA Training Center Faculty • 15+ years experience</p>
                                 <div class="instructor-stats">
-                                    <span>⭐ 4.9 instructor rating</span>
-                                    <span>👥 3,500+ students trained</span>
-                                    <span>🏆 AHA Regional Instructor Award 2023</span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18" style="color: #fbbf24;">star</span>
+                                        4.9 instructor rating
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18 text-success">groups</span>
+                                        3,500+ students trained
+                                    </span>
+                                    <span style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-icons md-18" style="color: #fbbf24;">emoji_events</span>
+                                        AHA Regional Instructor Award 2023
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -474,7 +567,10 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-left">
-                    <div class="logo-small">🫀 CPR Training Hub</div>
+                    <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-icons text-danger">favorite</span>
+                        CPR Training Hub
+                    </div>
                     <div class="checkout-steps">
                         <span class="step active">1. Details</span>
                         <span class="step-separator">→</span>
@@ -484,7 +580,10 @@
                     </div>
                 </div>
                 <div class="nav-right">
-                    <span class="secure-badge">🔒 Secure Checkout</span>
+                    <span class="secure-badge" style="display: flex; align-items: center; gap: 0.25rem;">
+                        <span class="material-icons md-18">lock</span>
+                        Secure Checkout
+                    </span>
                 </div>
             </div>
         </nav>
@@ -539,21 +638,21 @@
                         <label class="payment-option selected">
                             <input type="radio" name="payment" checked>
                             <span class="option-content">
-                                <span class="option-icon">💳</span>
+                                <span class="material-icons text-primary">credit_card</span>
                                 <span>Credit/Debit Card</span>
                             </span>
                         </label>
                         <label class="payment-option">
                             <input type="radio" name="payment">
                             <span class="option-content">
-                                <span class="option-icon">📱</span>
+                                <span class="option-icon"><span class="material-icons">payment</span></span>
                                 <span>PayPal</span>
                             </span>
                         </label>
                         <label class="payment-option">
                             <input type="radio" name="payment">
                             <span class="option-content">
-                                <span class="option-icon">🏢</span>
+                                <span class="material-icons text-info">business</span>
                                 <span>Corporate Account</span>
                             </span>
                         </label>
@@ -594,8 +693,14 @@
                         </div>
                         <div class="item-details">
                             <h3>BLS Provider Course</h3>
-                            <p>📅 Mar 8, 2025 • 9:00 AM - 1:00 PM</p>
-                            <p>📍 UCSF Medical Center</p>
+                            <p style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="material-icons md-18 text-info">event</span>
+                                Mar 8, 2025 • 9:00 AM - 1:00 PM
+                            </p>
+                            <p style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="material-icons md-18 text-primary">location_on</span>
+                                UCSF Medical Center
+                            </p>
                         </div>
                     </div>
                     
@@ -623,16 +728,25 @@
                     </button>
 
                     <div class="security-badges">
-                        <p>🔒 Secure payment by Stripe</p>
-                        <p>💳 PCI DSS Compliant</p>
+                        <p style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                            <span class="material-icons md-18">lock</span>
+                            Secure payment by Stripe
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                            <span class="material-icons md-18">verified_user</span>
+                            PCI DSS Compliant
+                        </p>
                     </div>
                 </div>
 
                 <div class="help-section">
                     <h3>Need Help?</h3>
-                    <p>📞 (800) CPR-HELP</p>
-                    <p>💬 <a href="#" class="link">Live Chat</a></p>
-                    <p>✉️ support@cprtraininghub.com</p>
+                    <p><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">phone</span>(800) CPR-HELP</p>
+                    <p><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">chat</span><a href="#" class="link">Live Chat</a></p>
+                    <p style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-icons md-18">email</span>
+                        support@cprtraininghub.com
+                    </p>
                 </div>
             </div>
         </div>
@@ -643,13 +757,19 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-left">
-                    <div class="logo-small">🫀 CPR Training Hub</div>
+                    <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-icons text-danger">favorite</span>
+                        CPR Training Hub
+                    </div>
                     <a href="#" onclick="navigateTo('discover')" class="nav-link">Find Courses</a>
                     <a href="#" onclick="navigateTo('dashboard')" class="nav-link active">My Schedule</a>
                     <a href="#" class="nav-link">Saved</a>
                 </div>
                 <div class="nav-right">
-                    <button class="notification-btn">🔔<span class="notification-badge">2</span></button>
+                    <button class="notification-btn">
+                        <span class="material-icons">notifications</span>
+                        <span class="notification-badge">2</span>
+                    </button>
                     <div class="user-menu">
                         <div class="avatar">JS</div>
                         <span class="user-name">John Smith</span>
@@ -660,7 +780,7 @@
 
         <div class="dashboard-content">
             <div class="dashboard-header">
-                <h1>Welcome back, John! 👋</h1>
+                <h1>Welcome back, John! <span class="material-icons" style="vertical-align: middle;">waving_hand</span></h1>
                 <p>You have 1 upcoming class and 2 certifications expiring soon.</p>
             </div>
 
@@ -674,8 +794,11 @@
                         </div>
                         <div class="class-info">
                             <h3>BLS Provider Course</h3>
-                            <p>📍 UCSF Medical Center</p>
-                            <p>⏰ 9:00 AM - 1:00 PM</p>
+                            <p style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="material-icons md-18 text-primary">location_on</span>
+                                UCSF Medical Center
+                            </p>
+                            <p><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">schedule</span>9:00 AM - 1:00 PM</p>
                             <div class="class-actions">
                                 <button class="btn btn-secondary">Add to Calendar</button>
                                 <button class="btn btn-secondary">Get Directions</button>
@@ -702,7 +825,9 @@
                 <div class="dashboard-section certifications">
                     <h2>My Certifications</h2>
                     <div class="certification-card active">
-                        <div class="cert-icon">🏅</div>
+                        <div class="cert-icon">
+                            <span class="material-icons md-48" style="color: #fbbf24;">workspace_premium</span>
+                        </div>
                         <div class="cert-info">
                             <h3>BLS Provider</h3>
                             <p>American Heart Association</p>
@@ -716,7 +841,7 @@
                     </div>
                     
                     <div class="certification-card expiring">
-                        <div class="cert-icon">🚨</div>
+                        <div class="cert-icon"><span class="material-icons" style="font-size: 3rem; color: #dc2626;">warning</span></div>
                         <div class="cert-info">
                             <h3>ACLS Provider</h3>
                             <p>American Heart Association</p>
@@ -770,19 +895,19 @@
                     <h2>Quick Actions</h2>
                     <div class="action-buttons">
                         <button class="action-btn" onclick="navigateTo('discover')">
-                            <span class="action-icon">🔍</span>
+                            <span class="action-icon"><span class="material-icons" style="font-size: 2.25rem;">search</span></span>
                             <span>Find a Course</span>
                         </button>
                         <button class="action-btn">
-                            <span class="action-icon">📋</span>
+                            <span class="action-icon"><span class="material-icons" style="font-size: 2.25rem;">assignment</span></span>
                             <span>Skills Checklist</span>
                         </button>
                         <button class="action-btn">
-                            <span class="action-icon">📚</span>
+                            <span class="material-icons md-36 text-info">menu_book</span>
                             <span>Study Materials</span>
                         </button>
                         <button class="action-btn">
-                            <span class="action-icon">👥</span>
+                            <span class="material-icons md-36 text-success">groups</span>
                             <span>Refer a Friend</span>
                         </button>
                     </div>
@@ -794,13 +919,21 @@
     <!-- Confirmation Modal -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-content">
-            <div class="confirmation-icon">✅</div>
+            <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                <span class="material-icons" style="font-size: 72px; color: #10b981;">check_circle</span>
+            </div>
             <h2>Enrollment Confirmed!</h2>
             <p>You're all set for BLS Provider Course on March 8, 2025</p>
             <div class="confirmation-details">
-                <p>📧 Confirmation email sent to john.smith@example.com</p>
-                <p>📱 Text reminder will be sent 24 hours before class</p>
-                <p>📚 Pre-class materials have been sent to your email</p>
+                <p style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="material-icons text-info">email</span>
+                    Confirmation email sent to john.smith@example.com
+                </p>
+                <p><span class="material-icons" style="font-size: 1rem; vertical-align: middle; margin-right: 0.25rem;">sms</span>Text reminder will be sent 24 hours before class</p>
+                <p style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="material-icons text-info">school</span>
+                    Pre-class materials have been sent to your email
+                </p>
             </div>
             <button class="btn btn-primary" onclick="navigateTo('dashboard')">
                 Go to My Dashboard

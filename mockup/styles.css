@@ -1,3 +1,11 @@
+/* Import Google Fonts and Material Icons */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+/* Import Tailwind CSS via CDN */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -6,11 +14,34 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
     background-color: #f8f9fa;
 }
+
+/* Material Icons Base Styles */
+.material-icons,
+.material-icons-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-72 { font-size: 72px; }
+
+/* Icon Colors */
+.material-icons.text-primary { color: #2563eb; }
+.material-icons.text-success { color: #10b981; }
+.material-icons.text-warning { color: #f59e0b; }
+.material-icons.text-danger { color: #ef4444; }
+.material-icons.text-info { color: #3b82f6; }
 
 /* Page Management */
 .page {
