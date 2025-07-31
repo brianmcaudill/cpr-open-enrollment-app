@@ -53,6 +53,18 @@ body {
     display: block;
 }
 
+/* Mobile padding to account for fixed navbar */
+@media (max-width: 768px) {
+    .page {
+        padding-top: 64px;
+    }
+    
+    .hero {
+        margin-top: -64px;
+        padding-top: calc(3rem + 64px);
+    }
+}
+
 /* Typography */
 h1, h2, h3, h4 {
     font-weight: 600;
@@ -1546,6 +1558,30 @@ select:focus {
         font-size: 1.25rem;
     }
     
+    /* Additional navbar fixes for small screens */
+    .nav-container {
+        padding: 0.5rem;
+    }
+    
+    .nav-left .logo {
+        font-size: 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        padding: 0.25rem;
+    }
+    
+    .mobile-menu-toggle .material-icons {
+        font-size: 20px;
+    }
+    
+    .notification-badge {
+        font-size: 0.625rem;
+        padding: 0.1rem 0.3rem;
+        top: -4px;
+        right: -4px;
+    }
+    
     .price {
         font-size: 1.25rem;
     }
@@ -1574,29 +1610,54 @@ select:focus {
     }
     
     .navbar {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+    }
+    
+    /* Add padding to body to prevent content overlap */
+    body {
+        padding-top: 64px;
     }
     
     .nav-container {
-        flex-wrap: wrap;
-        padding: 1rem;
+        flex-wrap: nowrap;
+        padding: 0.75rem 1rem;
+        min-height: 64px;
+        height: auto;
     }
     
     .nav-left {
         flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-left .logo {
+        font-size: 1.125rem;
     }
     
     .nav-right {
-        width: 100%;
-        order: 3;
-        margin-top: 1rem;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #e5e7eb;
         display: none;
+        z-index: 999;
     }
     
     .nav-right.mobile-active {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        padding: 1rem;
     }
     
     .nav-link {
@@ -1604,11 +1665,19 @@ select:focus {
         width: 100%;
         padding: 0.75rem;
         text-align: left;
+        border-radius: 0.375rem;
+    }
+    
+    .nav-link:hover {
+        background: #f3f4f6;
     }
     
     .user-menu {
         width: 100%;
         justify-content: space-between;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 1rem;
+        margin-top: 0.5rem;
     }
 }
 
