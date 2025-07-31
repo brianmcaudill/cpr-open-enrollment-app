@@ -1576,17 +1576,7 @@ select:focus {
         flex-direction: column;
     }
     
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    h2 {
-        font-size: 1.25rem;
-    }
-    
-    .dashboard-header h1 {
-        font-size: 1.25rem;
-    }
+    /* Typography handled in responsive typography section above */
     
     /* Additional navbar fixes for small screens */
     .nav-container {
@@ -1662,10 +1652,14 @@ select:focus {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        min-width: 0; /* Allow shrinking */
     }
     
     .nav-left .logo {
         font-size: 1.125rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .nav-right {
@@ -1831,13 +1825,52 @@ select:focus {
 
 /* Responsive Typography */
 @media (max-width: 768px) {
+    /* Base font size reduction */
+    body {
+        font-size: 14px; /* Down from 16px */
+    }
+    
+    /* Heading sizes */
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.125rem; }
+    h4 { font-size: 1rem; }
+    
+    /* Navigation and menu items */
+    .nav-link {
+        font-size: 0.875rem;
+    }
+    
+    .logo {
+        font-size: 1.125rem !important;
+    }
+    
+    .user-menu span {
+        font-size: 0.875rem;
+    }
+    
+    /* Button text */
+    .btn {
+        font-size: 0.875rem;
+    }
+    
+    /* Form elements */
+    label {
+        font-size: 0.875rem;
+    }
+    
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Specific sections */
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         line-height: 1.2;
     }
     
     .hero p {
-        font-size: 1rem;
+        font-size: 0.875rem;
     }
     
     .dashboard-header {
@@ -1845,11 +1878,84 @@ select:focus {
     }
     
     .dashboard-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
     .dashboard-header p {
         font-size: 0.875rem;
+    }
+    
+    /* Course cards and content */
+    .course-title {
+        font-size: 1rem;
+    }
+    
+    .course-meta {
+        font-size: 0.75rem;
+    }
+    
+    .price {
+        font-size: 1.125rem;
+    }
+    
+    /* General text */
+    p, li, td {
+        font-size: 0.875rem;
+    }
+    
+    /* Small text */
+    .text-sm, small {
+        font-size: 0.75rem;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    /* Further reduction */
+    body {
+        font-size: 13px;
+    }
+    
+    /* Headings */
+    h1 { font-size: 1.25rem; }
+    h2 { font-size: 1.125rem; }
+    h3 { font-size: 1rem; }
+    h4 { font-size: 0.875rem; }
+    
+    /* Navigation */
+    .nav-link {
+        font-size: 0.8125rem;
+    }
+    
+    .logo {
+        font-size: 1rem !important;
+    }
+    
+    /* Buttons */
+    .btn {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.875rem;
+    }
+    
+    /* Hero section */
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.8125rem;
+    }
+    
+    /* General content */
+    p, li, td {
+        font-size: 0.8125rem;
+    }
+    
+    /* Prevent text wrapping in nav */
+    .nav-link {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
