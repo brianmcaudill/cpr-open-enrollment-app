@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - CPR Training Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .help-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .help-search {
+            max-width: 600px;
+            margin: -2rem auto 2rem;
+            position: relative;
+        }
+        .help-search input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            font-size: 1.125rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .help-search button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .help-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .help-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .help-card .material-icons {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .faq-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        .contact-section {
+            background: #f9fafb;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-small" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="material-icons text-danger">favorite</span>
+                    CPR Training Hub
+                </div>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link active">Help Center</a>
+            </div>
+            <div class="nav-right">
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Back to Dashboard</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="help-header">
+        <h1>How Can We Help You?</h1>
+        <p>Find answers to common questions or contact our support team</p>
+    </div>
+
+    <div class="help-search">
+        <input type="text" placeholder="Search for help articles...">
+        <button><span class="material-icons">search</span></button>
+    </div>
+
+    <div class="help-categories">
+        <div class="help-card">
+            <span class="material-icons" style="color: #3b82f6;">school</span>
+            <h3>Getting Started</h3>
+            <p>Learn how to create an account, find courses, and enroll</p>
+        </div>
+        <div class="help-card">
+            <span class="material-icons" style="color: #10b981;">credit_card</span>
+            <h3>Payments & Refunds</h3>
+            <p>Payment methods, refund policy, and billing questions</p>
+        </div>
+        <div class="help-card">
+            <span class="material-icons" style="color: #f59e0b;">event</span>
+            <h3>Course Management</h3>
+            <p>Scheduling, rescheduling, and cancellation policies</p>
+        </div>
+        <div class="help-card">
+            <span class="material-icons" style="color: #ef4444;">workspace_premium</span>
+            <h3>Certifications</h3>
+            <p>Digital certificates, renewals, and verification</p>
+        </div>
+        <div class="help-card">
+            <span class="material-icons" style="color: #8b5cf6;">person</span>
+            <h3>Account Settings</h3>
+            <p>Profile management, password reset, and preferences</p>
+        </div>
+        <div class="help-card">
+            <span class="material-icons" style="color: #ec4899;">support_agent</span>
+            <h3>Technical Support</h3>
+            <p>Platform issues, browser compatibility, and troubleshooting</p>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I enroll in a CPR course?</span>
+                <span class="material-icons">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>To enroll in a CPR course:</p>
+                <ol>
+                    <li>Browse available courses on the home page or use the search feature</li>
+                    <li>Select your preferred date, time, and location</li>
+                    <li>Click "Enroll Now" and create an account if you haven't already</li>
+                    <li>Complete the payment process</li>
+                    <li>You'll receive a confirmation email with course details</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is your cancellation policy?</span>
+                <span class="material-icons">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our cancellation policy:</p>
+                <ul>
+                    <li>Full refund if cancelled 48+ hours before class</li>
+                    <li>50% refund if cancelled 24-48 hours before class</li>
+                    <li>No refund if cancelled less than 24 hours before class</li>
+                    <li>Free rescheduling available up to 24 hours before class</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I access my digital certificate?</span>
+                <span class="material-icons">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>After successfully completing your course:</p>
+                <ol>
+                    <li>Log into your account dashboard</li>
+                    <li>Go to "My Certifications" section</li>
+                    <li>Click "Download" next to your certificate</li>
+                    <li>You can also add it to your digital wallet for easy access</li>
+                </ol>
+                <p>Certificates are typically available within 24 hours of course completion.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What should I bring to my CPR class?</span>
+                <span class="material-icons">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Please bring the following to your CPR class:</p>
+                <ul>
+                    <li>Government-issued photo ID</li>
+                    <li>Confirmation email (printed or on your phone)</li>
+                    <li>Comfortable clothing suitable for practicing on the floor</li>
+                    <li>Any required pre-course materials or textbooks</li>
+                    <li>Note-taking materials (optional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long is my CPR certification valid?</span>
+                <span class="material-icons">expand_more</span>
+            </div>
+            <div class="faq-answer">
+                <p>Certification validity periods:</p>
+                <ul>
+                    <li>BLS Provider: 2 years</li>
+                    <li>ACLS Provider: 2 years</li>
+                    <li>PALS Provider: 2 years</li>
+                    <li>Heartsaver First Aid: 2 years</li>
+                    <li>Heartsaver CPR AED: 2 years</li>
+                </ul>
+                <p>We'll send you renewal reminders starting 60 days before expiration.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Still Need Help?</h2>
+        <p>Our support team is here to assist you</p>
+        
+        <div class="contact-options">
+            <div class="contact-card">
+                <span class="material-icons" style="font-size: 2rem; color: #3b82f6; margin-bottom: 1rem;">chat</span>
+                <h3>Live Chat</h3>
+                <p>Available 24/7</p>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Start Chat</button>
+            </div>
+            <div class="contact-card">
+                <span class="material-icons" style="font-size: 2rem; color: #10b981; margin-bottom: 1rem;">email</span>
+                <h3>Email Support</h3>
+                <p>support@cprtraininghub.com</p>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Send Email</button>
+            </div>
+            <div class="contact-card">
+                <span class="material-icons" style="font-size: 2rem; color: #f59e0b; margin-bottom: 1rem;">phone</span>
+                <h3>Phone Support</h3>
+                <p>(800) CPR-HELP</p>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Call Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const icon = question.querySelector('.material-icons');
+                
+                // Toggle active class
+                item.classList.toggle('active');
+                
+                // Toggle icon
+                icon.textContent = item.classList.contains('active') ? 'expand_less' : 'expand_more';
+                
+                // Close other FAQs
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.material-icons').textContent = 'expand_more';
+                    }
+                });
+            });
+        });
+
+        // Search functionality (placeholder)
+        document.querySelector('.help-search button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.help-search input').value;
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}\n\nIn a real application, this would filter help articles.`);
+            }
+        });
+
+        // Category cards (placeholder)
+        document.querySelectorAll('.help-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.querySelector('h3').textContent;
+                alert(`Opening ${category} articles...\n\nIn a real application, this would show relevant help articles.`);
+            });
+        });
+    </script>
+</body>
+</html>
