@@ -159,3 +159,96 @@ setInterval(() => {
         }
     });
 }, 5000);
+
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const navRight = document.querySelector('.nav-right');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (navRight) {
+        navRight.classList.toggle('mobile-active');
+        
+        // Update icon
+        if (menuToggle) {
+            menuToggle.innerHTML = navRight.classList.contains('mobile-active') 
+                ? '<span class="material-icons">close</span>' 
+                : '<span class="material-icons">menu</span>';
+        }
+    }
+}
+
+// Toggle Admin Sidebar on Mobile
+function toggleAdminSidebar() {
+    const sidebar = document.querySelector('.admin-sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('mobile-active');
+    }
+}
+
+// Toggle Instructor Sidebar on Mobile
+function toggleInstructorSidebar() {
+    const sidebar = document.querySelector('.instructor-nav');
+    if (sidebar) {
+        sidebar.classList.toggle('mobile-active');
+    }
+}
+
+// Close sidebars when clicking overlay
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('sidebar-overlay')) {
+        document.querySelectorAll('.admin-sidebar, .instructor-nav').forEach(sidebar => {
+            sidebar.classList.remove('mobile-active');
+        });
+        event.target.remove();
+    }
+});
+
+// Add mobile menu toggle to all pages
+document.addEventListener('DOMContentLoaded', function() {
+    // Create mobile menu toggle if navbar exists
+    const navbar = document.querySelector('.navbar');
+    if (navbar && !document.querySelector('.mobile-menu-toggle')) {
+        const navLeft = navbar.querySelector('.nav-left');
+        if (navLeft) {
+            const menuToggle = document.createElement('button');
+            menuToggle.className = 'mobile-menu-toggle';
+            menuToggle.innerHTML = '<span class="material-icons">menu</span>';
+            menuToggle.onclick = toggleMobileMenu;
+            navLeft.appendChild(menuToggle);
+        }
+    }
+    
+    // Add sidebar toggle for admin dashboard
+    const adminContent = document.querySelector('.admin-content');
+    if (adminContent && !document.querySelector('.admin-menu-toggle')) {
+        const menuToggle = document.createElement('button');
+        menuToggle.className = 'mobile-menu-toggle admin-menu-toggle';
+        menuToggle.innerHTML = '<span class="material-icons">menu</span>';
+        menuToggle.onclick = toggleAdminSidebar;
+        menuToggle.style.position = 'fixed';
+        menuToggle.style.top = '1rem';
+        menuToggle.style.left = '1rem';
+        menuToggle.style.zIndex = '1001';
+        menuToggle.style.background = 'white';
+        menuToggle.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        menuToggle.style.borderRadius = '0.375rem';
+        adminContent.appendChild(menuToggle);
+    }
+    
+    // Add sidebar toggle for instructor portal
+    const instructorContent = document.querySelector('.instructor-content');
+    if (instructorContent && !document.querySelector('.instructor-menu-toggle')) {
+        const menuToggle = document.createElement('button');
+        menuToggle.className = 'mobile-menu-toggle instructor-menu-toggle';
+        menuToggle.innerHTML = '<span class="material-icons">menu</span>';
+        menuToggle.onclick = toggleInstructorSidebar;
+        menuToggle.style.position = 'fixed';
+        menuToggle.style.top = '1rem';
+        menuToggle.style.left = '1rem';
+        menuToggle.style.zIndex = '1001';
+        menuToggle.style.background = 'white';
+        menuToggle.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        menuToggle.style.borderRadius = '0.375rem';
+        instructorContent.appendChild(menuToggle);
+    }
+});

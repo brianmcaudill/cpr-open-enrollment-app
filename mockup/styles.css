@@ -1442,6 +1442,7 @@ select:focus {
 }
 
 /* Responsive Design */
+/* Tablet - iPad, etc. */
 @media (max-width: 1024px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -1461,6 +1462,18 @@ select:focus {
     
     .included-items {
         grid-template-columns: 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1539,5 +1552,349 @@ select:focus {
     
     .amount {
         font-size: 2rem;
+    }
+}
+
+/* Enhanced Mobile-First Responsive Design */
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .navbar {
+        position: relative;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    
+    .nav-left {
+        flex: 1;
+    }
+    
+    .nav-right {
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+        display: none;
+    }
+    
+    .nav-right.mobile-active {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        text-align: left;
+    }
+    
+    .user-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    .roster-table,
+    .billing-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .roster-table thead,
+    .billing-table thead {
+        display: none;
+    }
+    
+    .roster-table tr,
+    .billing-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .roster-table td,
+    .billing-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+    }
+    
+    .roster-table td:before,
+    .billing-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: #6b7280;
+    }
+}
+
+/* Responsive Cards and Grids */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .course-card {
+        padding: 1rem;
+    }
+    
+    .course-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .course-meta span {
+        font-size: 0.875rem;
+    }
+    
+    .cert-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    .cert-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Responsive Forms */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+    }
+    
+    .payment-option {
+        width: 100%;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select,
+    textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Responsive Modals and Overlays */
+@media (max-width: 768px) {
+    .confirmation-modal .modal-content {
+        width: 90%;
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .page {
+        padding: 0;
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .dashboard-header {
+        padding: 1rem;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-header p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Responsive Sidebar Layouts */
+@media (max-width: 1024px) {
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .admin-sidebar.mobile-active {
+        display: block;
+    }
+    
+    .instructor-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .instructor-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        background: white;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .instructor-nav.mobile-active {
+        display: block;
+    }
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+    .course-image {
+        height: 150px;
+    }
+    
+    .instructor-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cert-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .dashboard-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .checkout-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Touch-friendly Buttons */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px; /* Apple's touch target recommendation */
+        font-size: 1rem;
+    }
+    
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .action-btn {
+        min-height: 60px;
+    }
+}
+
+/* Hide desktop-only elements on mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    
+    .checkout-steps {
+        display: none;
+    }
+    
+    .calendar-widget {
+        overflow-x: auto;
+    }
+}
+
+/* Show mobile-only elements */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center;
+    }
+    
+    .stack-mobile {
+        flex-direction: column;
+    }
+    
+    .hide-mobile {
+        display: none;
+    }
+    
+    .full-width-mobile {
+        width: 100%;
     }
 }
