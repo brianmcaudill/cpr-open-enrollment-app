@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Calendar - Dr. Sarah Johnson</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+        }
+        .embed-container {
+            max-width: 100%;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .embed-header {
+            background: #2563eb;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .embed-header h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        .embed-header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        .embed-content {
+            padding: 1.5rem;
+        }
+        .class-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+        .class-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+        .class-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        .class-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        .class-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2563eb;
+        }
+        .class-details {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .seats-available {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .enroll-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+        .enroll-btn:hover {
+            background: #1d4ed8;
+        }
+        .instructor-bio {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .instructor-bio img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .view-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .view-btn.active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="embed-container">
+        <div class="embed-header">
+            <h2>Dr. Sarah Johnson's CPR Classes</h2>
+            <p>American Heart Association Certified Instructor</p>
+        </div>
+        
+        <div class="embed-content">
+            <div class="view-options">
+                <button class="view-btn active">List View</button>
+                <button class="view-btn">Calendar View</button>
+                <button class="view-btn">Card Grid</button>
+            </div>
+
+            <div class="class-card">
+                <div class="class-header">
+                    <div>
+                        <div class="class-title">BLS Provider Course</div>
+                        <div class="class-date">📅 March 8, 2025 • 9:00 AM - 1:00 PM</div>
+                    </div>
+                    <div class="class-price">$85</div>
+                </div>
+                <div class="class-details">
+                    <span>📍 UCSF Medical Center</span>
+                    <span>⏱️ 4 hours</span>
+                    <span class="seats-available">5 seats left</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="class-card">
+                <div class="class-header">
+                    <div>
+                        <div class="class-title">ACLS Initial Certification</div>
+                        <div class="class-date">📅 March 15-16, 2025 • 8:00 AM - 5:00 PM</div>
+                    </div>
+                    <div class="class-price">$285</div>
+                </div>
+                <div class="class-details">
+                    <span>📍 St. Mary's Hospital</span>
+                    <span>⏱️ 2 days</span>
+                    <span class="seats-available">8 seats left</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="class-card">
+                <div class="class-header">
+                    <div>
+                        <div class="class-title">BLS Renewal Course</div>
+                        <div class="class-date">📅 March 22, 2025 • 6:00 PM - 8:00 PM</div>
+                    </div>
+                    <div class="class-price">$65</div>
+                </div>
+                <div class="class-details">
+                    <span>📍 Downtown Training Center</span>
+                    <span>⏱️ 2 hours</span>
+                    <span class="seats-available">12 seats left</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="instructor-bio">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: #4299e1; color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.5rem; margin: 0 auto 0.5rem;">
+                    SJ
+                </div>
+                <h3 style="margin: 0.5rem 0;">Dr. Sarah Johnson, RN, MSN</h3>
+                <p style="color: #6b7280; font-size: 0.875rem; margin: 0.5rem 0;">
+                    15+ years experience • 3,500+ students trained<br>
+                    ⭐ 4.9 instructor rating
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

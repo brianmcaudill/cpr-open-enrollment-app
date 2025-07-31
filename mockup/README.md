@@ -1,14 +1,44 @@
 # CPR Training Platform - Interactive Mockup
 
-This is a clickable mockup demonstrating the complete user flow for the CPR Open Enrollment Web Application.
+This is a comprehensive clickable mockup demonstrating all user roles and features for the CPR Open Enrollment Web Application.
 
 ## How to View
 
 1. Open `index.html` in a web browser
-2. The mockup starts at the login page
-3. Click "Sign In" to begin exploring (credentials are pre-filled)
+2. Choose your role from the login page:
+   - **Student Login**: Click "Sign In" (credentials pre-filled)
+   - **Instructor Login**: Click "Instructor Login" button
+   - **Admin Login**: Click "Admin Login" button
 
-## User Flow
+## Complete Feature Set
+
+### 🎓 Student Portal
+- Course discovery with advanced filtering
+- Calendar-based class selection
+- Enrollment and payment flow
+- Student dashboard with certifications
+
+### 👩‍🏫 Instructor Portal
+- Class creation and management
+- Student roster management
+- Mobile skills verification module
+- Calendar embedding for websites
+- Earnings and performance tracking
+
+### 🏢 Admin Dashboard
+- Multi-organization management
+- Instructor scheduling (TSMS)
+- Billing and invoice management
+- Platform analytics and KPIs
+- AI-powered insights dashboard
+
+### 🤖 AI Features
+- Chatbot assistant (click 💬 button)
+- Smart scheduling predictions
+- Demand forecasting
+- Performance analytics
+
+## User Flows
 
 ### 1. Login Page
 - Modern, clean login interface

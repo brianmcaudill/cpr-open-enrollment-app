@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Portal - CPR Training Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Instructor Portal Specific Styles */
+        .instructor-nav {
+            background: #2d3748;
+            color: white;
+            width: 250px;
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .instructor-nav .nav-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #4a5568;
+        }
+        .instructor-nav .nav-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .instructor-nav .nav-item:hover {
+            background: #4a5568;
+            color: white;
+        }
+        .instructor-nav .nav-item.active {
+            background: #4a5568;
+            color: white;
+            border-left: 3px solid #4299e1;
+        }
+        .instructor-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        .class-creation-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            max-width: 800px;
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .form-section h3 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        .date-time-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        .roster-table {
+            width: 100%;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .roster-table th {
+            background: #f7fafc;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .roster-table td {
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        .student-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .status-registered {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .skills-module {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .skill-checkbox {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+        }
+        .embed-code-box {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        .calendar-customization {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .preview-frame {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            height: 400px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+        }
+        .stat-card .stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .stat-card .stat-label {
+            color: #718096;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .instructor-nav {
+                transform: translateX(-100%);
+            }
+            .instructor-content {
+                margin-left: 0;
+            }
+            .date-time-row {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Instructor Dashboard -->
+    <div id="instructor-dashboard" class="page active">
+        <nav class="instructor-nav">
+            <div class="nav-header">
+                <h2>🫀 Instructor Portal</h2>
+                <p style="color: #a0aec0; font-size: 0.875rem;">Dr. Sarah Johnson</p>
+            </div>
+            <a href="#" class="nav-item active" onclick="showInstructorSection('dashboard')">
+                📊 Dashboard
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('create-class')">
+                ➕ Create Class
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('my-classes')">
+                📅 My Classes
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('rosters')">
+                👥 Rosters
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('skills-verification')">
+                ✅ Skills Verification
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('calendar-embed')">
+                🔗 Embed Calendar
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('earnings')">
+                💰 Earnings
+            </a>
+            <a href="#" class="nav-item" onclick="showInstructorSection('resources')">
+                📚 Resources
+            </a>
+            <hr style="border-color: #4a5568; margin: 1rem 0;">
+            <a href="#" class="nav-item" onclick="navigateTo('discover')">
+                🔄 Switch to Student View
+            </a>
+        </nav>
+
+        <div class="instructor-content">
+            <!-- Dashboard Section -->
+            <div id="instructor-dashboard-section" class="instructor-section">
+                <h1>Welcome back, Dr. Johnson! 👋</h1>
+                <p style="color: #718096; margin-bottom: 2rem;">Here's your teaching overview for this month</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Classes This Month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">312</div>
+                        <div class="stat-label">Students Certified</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$8,420</div>
+                        <div class="stat-label">Monthly Earnings</div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="dashboard-section">
+                        <h2>Upcoming Classes</h2>
+                        <div class="upcoming-class-card">
+                            <div class="class-date">
+                                <div class="date-month">MAR</div>
+                                <div class="date-day">8</div>
+                            </div>
+                            <div class="class-info">
+                                <h3>BLS Provider Course</h3>
+                                <p>📍 UCSF Medical Center</p>
+                                <p>⏰ 9:00 AM - 1:00 PM</p>
+                                <p>👥 15/20 students enrolled</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-secondary" onclick="showInstructorSection('rosters')">View Roster</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h2>Recent Reviews</h2>
+                        <div style="padding: 1rem; background: #f7fafc; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600;">John Smith</span>
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p style="color: #718096; font-size: 0.875rem;">"Excellent instructor! Very thorough and patient with all students."</p>
+                        </div>
+                        <div style="padding: 1rem; background: #f7fafc; border-radius: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600;">Maria Garcia</span>
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p style="color: #718096; font-size: 0.875rem;">"Best CPR class I've taken. Dr. Johnson makes complex topics easy to understand."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Class Section -->
+            <div id="instructor-create-class-section" class="instructor-section" style="display: none;">
+                <h1>Create New Class</h1>
+                <div class="class-creation-form">
+                    <div class="form-section">
+                        <h3>Class Information</h3>
+                        <div class="form-group">
+                            <label>Course Type</label>
+                            <select>
+                                <option>BLS Provider</option>
+                                <option>Heartsaver CPR AED</option>
+                                <option>Heartsaver First Aid</option>
+                                <option>ACLS Initial</option>
+                                <option>ACLS Renewal</option>
+                                <option>PALS Initial</option>
+                                <option>PALS Renewal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Class Title (Optional)</label>
+                            <input type="text" placeholder="e.g., Weekend BLS for Healthcare Providers">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea rows="3" placeholder="Add any special notes about this class..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Schedule</h3>
+                        <div class="date-time-row">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" value="2025-03-15">
+                            </div>
+                            <div class="form-group">
+                                <label>Start Time</label>
+                                <input type="time" value="09:00">
+                            </div>
+                            <div class="form-group">
+                                <label>End Time</label>
+                                <input type="time" value="13:00">
+                            </div>
+                        </div>
+                        <label class="checkbox" style="margin-top: 1rem;">
+                            <input type="checkbox">
+                            <span>Recurring class (weekly/monthly)</span>
+                        </label>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Location</h3>
+                        <div class="form-group">
+                            <label>Venue</label>
+                            <select>
+                                <option>UCSF Medical Center - Room 201</option>
+                                <option>SF Fire Department Training Center</option>
+                                <option>St. Mary's Hospital - Conference Room A</option>
+                                <option>Add New Location...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" value="505 Parnassus Ave, San Francisco, CA 94143" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Enrollment & Pricing</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label>Maximum Students</label>
+                                <input type="number" value="20">
+                            </div>
+                            <div class="form-group">
+                                <label>Price per Student</label>
+                                <input type="number" value="85">
+                            </div>
+                            <div class="form-group">
+                                <label>Early Bird Discount</label>
+                                <input type="number" placeholder="10%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Requirements</h3>
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span>Students must complete online portion before class</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span>Healthcare provider verification required</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span>Previous certification required (renewal only)</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-primary">Create Class</button>
+                        <button class="btn btn-secondary">Save as Draft</button>
+                        <button class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Classes Section -->
+            <div id="instructor-my-classes-section" class="instructor-section" style="display: none;">
+                <h1>My Classes</h1>
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <button class="btn btn-secondary">All Classes</button>
+                    <button class="btn btn-secondary">Upcoming</button>
+                    <button class="btn btn-secondary">Past</button>
+                    <button class="btn btn-secondary">Cancelled</button>
+                </div>
+
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Course</th>
+                            <th>Location</th>
+                            <th>Students</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar 8, 2025<br><small>9:00 AM - 1:00 PM</small></td>
+                            <td>BLS Provider</td>
+                            <td>UCSF Medical Center</td>
+                            <td>15/20</td>
+                            <td><span class="student-status status-registered">Scheduled</span></td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Manage</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mar 10, 2025<br><small>2:00 PM - 6:00 PM</small></td>
+                            <td>Heartsaver First Aid</td>
+                            <td>SF Fire Department</td>
+                            <td>8/15</td>
+                            <td><span class="student-status status-registered">Scheduled</span></td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Manage</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mar 15, 2025<br><small>8:00 AM - 5:00 PM</small></td>
+                            <td>ACLS Initial</td>
+                            <td>St. Mary's Hospital</td>
+                            <td>12/12</td>
+                            <td><span class="student-status" style="background: #fef3c7; color: #92400e;">Full</span></td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Manage</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Rosters Section -->
+            <div id="instructor-rosters-section" class="instructor-section" style="display: none;">
+                <h1>Class Roster - BLS Provider (March 8, 2025)</h1>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <div>
+                        <p>UCSF Medical Center • 9:00 AM - 1:00 PM</p>
+                        <p style="color: #718096;">15 of 20 students enrolled</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-secondary">📧 Email All</button>
+                        <button class="btn btn-secondary">📱 SMS Reminder</button>
+                        <button class="btn btn-secondary">📄 Print Roster</button>
+                        <button class="btn btn-secondary">⬇️ Export CSV</button>
+                    </div>
+                </div>
+
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Healthcare Role</th>
+                            <th>Pre-class Status</th>
+                            <th>Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>John Smith</strong></td>
+                            <td>john.smith@example.com</td>
+                            <td>(415) 555-0123</td>
+                            <td>RN</td>
+                            <td><span class="student-status status-completed">✓ Completed</span></td>
+                            <td>✓ Paid</td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maria Garcia</strong></td>
+                            <td>maria.garcia@example.com</td>
+                            <td>(415) 555-0124</td>
+                            <td>EMT</td>
+                            <td><span class="student-status status-registered">In Progress</span></td>
+                            <td>✓ Paid</td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>David Lee</strong></td>
+                            <td>david.lee@example.com</td>
+                            <td>(415) 555-0125</td>
+                            <td>Medical Student</td>
+                            <td><span class="student-status" style="background: #fee2e2; color: #991b1b;">Not Started</span></td>
+                            <td>✓ Paid</td>
+                            <td>
+                                <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: #f7fafc; border-radius: 0.5rem;">
+                    <h3>Quick Actions</h3>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button class="btn btn-primary">Start Skills Verification</button>
+                        <button class="btn btn-secondary">Add Walk-in Student</button>
+                        <button class="btn btn-secondary">Mark Attendance</button>
+                        <button class="btn btn-secondary">Issue Certificates</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Verification Section -->
+            <div id="instructor-skills-verification-section" class="instructor-section" style="display: none;">
+                <h1>Skills Verification - Mobile View</h1>
+                <p style="color: #718096; margin-bottom: 2rem;">Use this mobile-optimized checklist during hands-on practice</p>
+
+                <div class="skills-module">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2>John Smith</h2>
+                        <p style="color: #718096;">BLS Provider Skills Check</p>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill1">
+                        <label for="skill1" style="flex: 1;">
+                            <strong>Scene Safety & PPE</strong><br>
+                            <small style="color: #718096;">Verbalizes scene safety, uses appropriate PPE</small>
+                        </label>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill2">
+                        <label for="skill2" style="flex: 1;">
+                            <strong>Check Responsiveness</strong><br>
+                            <small style="color: #718096;">Taps and shouts, checks for breathing</small>
+                        </label>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill3">
+                        <label for="skill3" style="flex: 1;">
+                            <strong>Activate Emergency Response</strong><br>
+                            <small style="color: #718096;">Calls for help, requests AED</small>
+                        </label>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill4">
+                        <label for="skill4" style="flex: 1;">
+                            <strong>High-Quality Chest Compressions</strong><br>
+                            <small style="color: #718096;">Rate 100-120, depth 2-2.4", complete recoil</small>
+                        </label>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill5">
+                        <label for="skill5" style="flex: 1;">
+                            <strong>Effective Ventilations</strong><br>
+                            <small style="color: #718096;">Opens airway, visible chest rise, 1 second each</small>
+                        </label>
+                    </div>
+
+                    <div class="skill-item">
+                        <input type="checkbox" class="skill-checkbox" id="skill6">
+                        <label for="skill6" style="flex: 1;">
+                            <strong>AED Use</strong><br>
+                            <small style="color: #718096;">Proper pad placement, clears before shock</small>
+                        </label>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem;">Additional Notes</label>
+                        <textarea rows="3" placeholder="Any areas needing improvement..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button class="btn btn-primary" style="flex: 1;">Pass</button>
+                        <button class="btn btn-secondary" style="flex: 1;">Needs Remediation</button>
+                    </div>
+
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Next Student →</button>
+                </div>
+            </div>
+
+            <!-- Calendar Embed Section -->
+            <div id="instructor-calendar-embed-section" class="instructor-section" style="display: none;">
+                <h1>Embed Your Class Calendar</h1>
+                <p style="color: #718096; margin-bottom: 2rem;">Share your upcoming classes on your website or social media</p>
+
+                <div class="calendar-customization">
+                    <div>
+                        <h3>Customize Appearance</h3>
+                        <div class="form-group">
+                            <label>Display Mode</label>
+                            <select>
+                                <option>Calendar View</option>
+                                <option>List View</option>
+                                <option>Card Grid</option>
+                                <option>Compact List</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Color Theme</label>
+                            <select>
+                                <option>Default Blue</option>
+                                <option>Professional Dark</option>
+                                <option>Healthcare Green</option>
+                                <option>Custom Colors...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Show Classes</label>
+                            <select>
+                                <option>All My Classes</option>
+                                <option>BLS Only</option>
+                                <option>ACLS/PALS Only</option>
+                                <option>Next 30 Days</option>
+                            </select>
+                        </div>
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span>Show "Register" buttons</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span>Display available seats</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span>Show instructor bio</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <h3>Preview</h3>
+                        <iframe class="preview-frame" src="embed-preview.html"></iframe>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3>Embed Code</h3>
+                    <p style="color: #718096; margin-bottom: 1rem;">Copy and paste this code into your website:</p>
+                    <div class="embed-code-box">
+&lt;!-- CPR Training Hub Calendar Widget --&gt;<br>
+&lt;iframe src="https://cprtraininghub.com/embed/instructor/sarah-johnson"<br>
+&nbsp;&nbsp;width="100%"<br>
+&nbsp;&nbsp;height="600"<br>
+&nbsp;&nbsp;frameborder="0"<br>
+&nbsp;&nbsp;style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"&gt;<br>
+&lt;/iframe&gt;
+                    </div>
+                    <button class="btn btn-secondary" style="margin-top: 1rem;">Copy Code</button>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: #f7fafc; border-radius: 0.5rem;">
+                    <h3>Share Links</h3>
+                    <p style="color: #718096; margin-bottom: 1rem;">Direct links to your calendar:</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-secondary">📧 Email</button>
+                        <button class="btn btn-secondary">📘 Facebook</button>
+                        <button class="btn btn-secondary">🐦 Twitter</button>
+                        <button class="btn btn-secondary">💼 LinkedIn</button>
+                        <button class="btn btn-secondary">🔗 Copy Link</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings Section -->
+            <div id="instructor-earnings-section" class="instructor-section" style="display: none;">
+                <h1>Earnings Overview</h1>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">$8,420</div>
+                        <div class="stat-label">This Month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$7,890</div>
+                        <div class="stat-label">Last Month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$94,350</div>
+                        <div class="stat-label">Year to Date</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$2,105</div>
+                        <div class="stat-label">Pending Payout</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Recent Transactions</h2>
+                    <table class="roster-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Class</th>
+                                <th>Students</th>
+                                <th>Rate</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mar 5, 2025</td>
+                                <td>BLS Provider</td>
+                                <td>18</td>
+                                <td>$20/student</td>
+                                <td>$360</td>
+                                <td><span class="student-status status-completed">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>Mar 3, 2025</td>
+                                <td>ACLS Initial</td>
+                                <td>12</td>
+                                <td>$40/student</td>
+                                <td>$480</td>
+                                <td><span class="student-status status-completed">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>Mar 1, 2025</td>
+                                <td>Heartsaver First Aid</td>
+                                <td>15</td>
+                                <td>$15/student</td>
+                                <td>$225</td>
+                                <td><span class="student-status status-registered">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <button class="btn btn-primary">Request Payout</button>
+                        <button class="btn btn-secondary">Download Tax Documents</button>
+                        <button class="btn btn-secondary">View Full History</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function showInstructorSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.instructor-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            document.getElementById('instructor-' + sectionId + '-section').style.display = 'block';
+            
+            // Update active nav item
+            document.querySelectorAll('.instructor-nav .nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

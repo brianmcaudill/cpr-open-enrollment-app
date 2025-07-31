@@ -1,5 +1,15 @@
 // Page Navigation
 function navigateTo(pageId) {
+    // For instructor and admin portals, redirect to separate pages
+    if (pageId === 'instructor') {
+        window.location.href = 'instructor-portal.html';
+        return;
+    }
+    if (pageId === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+        return;
+    }
+    
     // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
