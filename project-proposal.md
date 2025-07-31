@@ -474,6 +474,48 @@ All AI features as specified in the RFI are fully integrated into the architectu
 - **Regulatory changes**: Flexible architecture for compliance updates
 - **Scope creep**: Managed through clear requirements and change control
 
+## UX/UI Design Approach
+
+### Design Methodology
+As specified in the RFI, we will coordinate closely with your internal Creative and Design teams for all branded elements and art direction. Our technical implementation approach ensures seamless integration with your design vision.
+
+### Reference Examples
+Based on the provided mockups:
+
+1. **Admin Interface (img1.jpg)** - Demonstrates familiarity with:
+   - Multi-panel navigation structure (Instructor Portal, TSM Portal)
+   - Advanced filtering capabilities (Status, Date ranges)
+   - Table-based data presentation with status indicators
+   - Dark sidebar navigation pattern
+   - Action-oriented design with clear CTAs
+
+2. **Streamlined Classes Interface (img2.jpg)** - Shows existing patterns for:
+   - Clean, modern interface with dark theme
+   - Clear information hierarchy (Course Type, Location, Date/Time, Status)
+   - Consistent action buttons (View, Enroll)
+   - Multi-tenant support (Training Business selector)
+   - Responsive table layouts
+
+3. **Additional UX Pilot Designs** - To be incorporated from uxpilot.ai mockups
+
+### Technical Design Implementation
+Our approach focuses on:
+
+- **Component Architecture** - Reusable components matching your existing design patterns
+- **Design System Integration** - Flexible theming to support your brand guidelines
+- **Accessibility Standards** - WCAG 2.1 AA compliance built into all components
+- **Responsive Framework** - Mobile-first approach matching your current interfaces
+- **Performance Optimization** - Fast-loading interfaces with skeleton screens and progressive enhancement
+
+### Design Collaboration Process
+1. Review and analyze all provided mockups and design assets
+2. Create technical component specifications based on designs
+3. Implement pixel-perfect components with your design team's guidance
+4. Maintain design-development sync through regular reviews
+5. Provide technical documentation for design handoffs
+
+This approach ensures your design vision is fully realized while maintaining technical excellence and scalability.
+
 ## Conclusion
 
 This comprehensive solution delivers a next-generation CPR training management platform that exceeds current market offerings through intelligent automation, superior user experience, and scalable architecture. Our approach ensures rapid deployment, long-term sustainability, and the flexibility to evolve with industry needs.
